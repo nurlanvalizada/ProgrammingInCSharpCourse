@@ -1,9 +1,9 @@
 # Lesson2 - Tasks
 
 ## Reading materials
-https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions
-https://www.geeksforgeeks.org/c-sharp-type-casting/
-https://code-maze.com/csharp-basics-type-conversion/
+https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/types/casting-and-type-conversions \
+https://www.geeksforgeeks.org/c-sharp-type-casting/ \
+https://code-maze.com/csharp-basics-type-conversion/ \
 [Comments in C# (c-sharpcorner.com)](https://www.c-sharpcorner.com/UploadFile/puranindia/comments-in-C-Sharp/)
 
 ## ToDo
