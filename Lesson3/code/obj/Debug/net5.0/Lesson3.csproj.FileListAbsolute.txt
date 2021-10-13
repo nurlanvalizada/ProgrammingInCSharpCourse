@@ -1,0 +1,16 @@
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\Lesson3.exe
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\Lesson3.deps.json
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\Lesson3.runtimeconfig.json
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\Lesson3.runtimeconfig.dev.json
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\Lesson3.dll
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\ref\Lesson3.dll
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\bin\Debug\net5.0\Lesson3.pdb
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.csproj.AssemblyReference.cache
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.AssemblyInfoInputs.cache
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.AssemblyInfo.cs
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.csproj.CoreCompileInputs.cache
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.dll
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\ref\Lesson3.dll
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.pdb
+C:\Users\nurlan\source\repos\ProgrammingInCSharpCourse\Lesson3\code\obj\Debug\net5.0\Lesson3.genruntimeconfig.cache
