@@ -12,3 +12,6 @@ https://code-maze.com/csharp-basics-type-conversion/ \
 	Example. 1st input: Azərbaycan, 2nd input: can, Result should be true because **can** is in **Azərbaycan**
 3. Get 2 int number input from user and calculate the exact **input1 / input2**. Example: 16, 5. Result should be 3.2 not 3.
 4. Practise type conversions (different options), types and operators
+
+## Video 
+https://www.youtube.com/watch?v=QUG5P2p9Qaw&list=PLsZzhlSBz0vJIRVMgcp1E4gm4wn3x2IcS&index=3&ab_channel=NurlanValizada

@@ -46,3 +46,11 @@ Input a positive integer: 16\
 Expected Output :\
 16 = 3 + 13\
 16 = 5 + 11
+1.  Write a program in C# to check whether a number is a palindrome (**visual simmetric**) or not. 
+Test Data :\
+Input a number: 121\
+Expected Output :\
+121 is a palindrome number.
+
+## Video
+https://www.youtube.com/watch?v=MUFvwKAJlMs&list=PLsZzhlSBz0vJIRVMgcp1E4gm4wn3x2IcS&index=5&ab_channel=NurlanValizada

@@ -69,3 +69,6 @@ Here are the options :
   
 Input your choice :3  
 The Multiplication of 10 and 2 is: 20
+
+## Video
+https://www.youtube.com/watch?v=3QPXcdhj3RY&list=PLsZzhlSBz0vJIRVMgcp1E4gm4wn3x2IcS&index=4&ab_channel=NurlanValizada
