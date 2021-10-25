@@ -41,3 +41,6 @@ Expected Output :
 "This is a test string." contains 4 spaces
 
 8. https://www.hackerrank.com/ - **Create an account** and get ready for next lesson, we are going to do some online coding next lesson
+
+## Video
+https://www.youtube.com/watch?v=sKHIORsexQY&ab_channel=NurlanValizada
