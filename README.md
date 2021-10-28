@@ -16,4 +16,13 @@ Kurs ana dilimizdə yəni Azərbaycan dilində tədris olunur. **Lakin** proqram
 ## Youtube kanalı
 https://www.youtube.com/watch?v=V3ZQ_aTIBcU&list=PLsZzhlSBz0vJIRVMgcp1E4gm4wn3x2IcS&ab_channel=NurlanValizada
 
+## Tapşırıqların cavabları
+Tapşırıqları tələbələrdən hər hansı birinin yazdıqları ilə tutuşdurub yoxlamaq mümkündür əgər çətinlik olsa
+https://github.com/KamranZadeh/ProgrammingInCSharpCourse \
+https://github.com/ilkinshahaliyev/ProgrammingInCSharpCourse \
+https://github.com/MrBadalov/ProgrammingInCSharpCourse \
+https://github.com/camalkarimov/ProgrammingInCSharpCourse \
+https://github.com/ShahaliShahaliyev/ProgrammingInCSharpCourse \
+https://github.com/sabinashahaliyeva/ProgrammingInCSharpCourse
+
 
