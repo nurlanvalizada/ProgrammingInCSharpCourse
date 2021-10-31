@@ -6,4 +6,4 @@
 3. https://www.hackerrank.com/challenges/birthday-cake-candles/problem
 4. https://www.hackerrank.com/challenges/time-conversion/problem
 5. https://www.hackerrank.com/challenges/staircase/problem
-6. https://www.hackerrank.com/challenges/day-of-the-programmer/submissions
+6. https://www.hackerrank.com/challenges/day-of-the-programmer/problem
