@@ -19,7 +19,7 @@
 
    The student will have a public method "ShowAge" which will write on the screen "My age is: 20 years old" (or the corresponding number).
 
-   You must create another test class called "StudentAndTeacherTest" that will contain "Main" and:
+   You must create another test class called "StudentAndTeacherTest" that will contain "Main" and: \
    Create a SchoolPerson and make it say hello \
    Create a student, set his age to 21, tell him to Greet, display his age and make him to go classes \
    Create a teacher, set age to 30 years old, ask him to say hello, then go to classes and then explain.
