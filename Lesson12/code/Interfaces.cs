@@ -77,6 +77,6 @@ namespace Lesson12
 
     public interface IPersonVisualizer
     {
-        void PrintPerson(Person person);
+       void PrintPerson(Person person);
     }
 }
