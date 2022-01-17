@@ -1,0 +1,30 @@
+create FUNCTION FN_GetStudentCoursesListMulti
+(
+   @StudentId int
+)
+RETURNS 
+@result TABLE 
+(
+	-- Add the column definitions for the TABLE variable here
+	Name1 nvarchar(50), 
+	CreationTime1 datetime
+)
+AS
+BEGIN
+	-- Fill the table variable with the rows for your result set
+	insert into @result 
+	select c.Name, c.CreationTime from dbo.tblStudent s
+	join tblStudentCourse sc on sc.StudentId = s.Id
+	join tblCourse c on c.Id = sc.CourseId
+	where s.Id=@StudentId
+
+	If(@StudentId=9)
+	Begin
+	insert into @result values ('Kimya', getdate())
+	End
+	
+	RETURN 
+END
+GO
+
+select * from FN_GetStudentCoursesListMulti(9)

@@ -1,0 +1,23 @@
+
+create FUNCTION FN_GetStudentCoursesCount
+(
+	@StudentId int
+)
+RETURNS int
+AS
+BEGIN
+	-- Declare the return variable here
+	DECLARE @StudentCourseCount int;
+
+	select @StudentCourseCount = count(s.Id) from dbo.tblStudent s
+	join tblStudentCourse sc on sc.StudentId = s.Id
+	join tblCourse c on c.Id = sc.CourseId
+	where s.Id=@StudentId
+
+	-- Return the result of the function
+	RETURN @StudentCourseCount
+
+END
+GO
+
+select dbo.FN_GetStudentCoursesCount(6)

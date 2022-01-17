@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +93,30 @@
             this.dataGridView1.Size = new System.Drawing.Size(697, 337);
             this.dataGridView1.TabIndex = 5;
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(21, 344);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(125, 27);
+            this.textBox3.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(21, 377);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(125, 29);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // CreateUserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(914, 600);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -120,5 +141,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Button button2;
     }
 }

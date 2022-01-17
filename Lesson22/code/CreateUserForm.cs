@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Data.SqlClient;
 
 namespace Lesson22
 {
     public partial class CreateUserForm : Form
     {
-        private const string MyDbPath = @"D:\MyDB\Students";
+        private const string MyDbPath = @".\Students";
 
         public CreateUserForm()
         {
+            if (!Directory.Exists(MyDbPath))
+            {
+                Directory.CreateDirectory(MyDbPath);
+            }
+
             InitializeComponent();
 
             dataGridView1.Columns.Add("Id", "Id");
@@ -95,6 +96,44 @@ namespace Lesson22
 
             return result;
         }
+
+        private List<Course> GetCoursesFromSqlDb(int studentId)
+        {
+            var result = new List<Course>();
+
+            var connection = new SqlConnection(@"Server=.\SQLEXPRESS;Database=StudentsDb;Trusted_Connection=True;TrustServerCertificate=True");
+            var command = connection.CreateCommand();
+            command.CommandText = @"select c.Name, c.CreationTime from dbo.tblStudent s
+	                                join tblStudentCourse sc on sc.StudentId = s.Id
+	                                join tblCourse c on c.Id = sc.CourseId
+	                                where s.Id="+ studentId;
+            connection.Open();
+
+            var dataReader = command.ExecuteReader();
+            while (dataReader.Read())
+            {
+                var courseName = dataReader.GetString(dataReader.GetOrdinal("Name"));
+                var creationTime = dataReader.GetDateTime(dataReader.GetOrdinal("CreationTime"));
+
+                var course = new Course
+                {
+                    Name = courseName,
+                    CreationTime = creationTime
+                };
+
+                result.Add(course);
+            }
+
+            connection.Close();
+
+            return result;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var studentId = int.Parse(textBox3.Text);
+            var courses = GetCoursesFromSqlDb(studentId);
+        }
     }
 
     public class Student
@@ -103,6 +142,12 @@ namespace Lesson22
         public string Name { get; set; }
         public string Surname { get; set; }
         public string ProfileImagePath { get; set; }
+    }
+
+    public class Course
+    {
+        public string Name { get; set; }
+        public DateTime CreationTime { get; set; }
     }
 
 }

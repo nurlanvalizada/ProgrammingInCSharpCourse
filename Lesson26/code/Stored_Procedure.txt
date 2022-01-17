@@ -1,0 +1,12 @@
+CREATE PROCEDURE SP_GetStudentCourseList
+	@StudentId int
+AS
+BEGIN
+  select c.Name, c.CreationTime from dbo.tblStudent s
+	join tblStudentCourse sc on sc.StudentId = s.Id
+	join tblCourse c on c.Id = sc.CourseId
+	where s.Id=@StudentId
+END
+GO
+
+exec SP_GetStudentCourseList 3
