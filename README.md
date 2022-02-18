@@ -21,8 +21,6 @@ Tapşırıqları tələbələrdən hər hansı birinin yazdıqları ilə tutuşd
 https://github.com/KamranZadeh/ProgrammingInCSharpCourse \
 https://github.com/ilkinshahaliyev/ProgrammingInCSharpCourse \
 https://github.com/MrBadalov/ProgrammingInCSharpCourse \
-https://github.com/camalkarimov/ProgrammingInCSharpCourse \
-https://github.com/ShahaliShahaliyev/ProgrammingInCSharpCourse \
-https://github.com/sabinashahaliyeva/ProgrammingInCSharpCourse
+https://github.com/ShahaliShahaliyev/ProgrammingInCSharpCourse
 
 
