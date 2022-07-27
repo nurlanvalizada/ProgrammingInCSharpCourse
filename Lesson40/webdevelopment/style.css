@@ -1,0 +1,23 @@
+body {
+    background-color: bisque;
+}
+
+p {
+    color: orange;
+    text-align: right;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+#id1 {
+    color: green;
+    text-align: center;
+}
+
+p.class1 {
+    color: blue;
+    text-align: center;
+}
