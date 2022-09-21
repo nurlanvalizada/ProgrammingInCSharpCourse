@@ -3,3 +3,5 @@ bin/
 obj/
 test/
 /env
+.DS_Store
+.idea/
