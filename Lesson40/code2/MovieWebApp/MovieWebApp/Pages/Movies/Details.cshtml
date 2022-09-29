@@ -1,4 +1,5 @@
 ﻿@page
+@using MovieWebApp.ViewComponents
 @model MovieWebApp.Pages.Movies.DetailsModel
 
 @{
@@ -6,8 +7,22 @@
 }
 
 <h1>Details</h1>
+<div class="row">
+    <div class="col-9">
+        @await Html.PartialAsync("_MovieDetails", Model)
+    </div>
+    <div class="col-3 mt-lg-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">Genre Count Info</h5>
+                <vc:genre-count genre="@Model.Movie.Genre"></vc:genre-count>
+                @* @await Component.InvokeAsync("GenreCount", new { genre = Model.Movie.Genre }) *@
+            </div>
+        </div>
+    </div>
+</div>
 
-@await Html.PartialAsync("_MovieDetails", Model)
+
 
 <div>
     <a asp-page="./Edit" asp-route-id="@Model.Movie.ID">Edit</a> |
