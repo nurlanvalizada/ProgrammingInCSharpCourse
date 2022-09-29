@@ -12,15 +12,20 @@ namespace MovieWebApp.Pages.Movies
 {
     public class CreateModel : PageModel
     {
-        private readonly MovieWebApp.Data.MovieWebAppContext _context;
+        private readonly MovieWebAppContext _context;
 
-        public CreateModel(MovieWebApp.Data.MovieWebAppContext context)
+        public CreateModel(MovieWebAppContext context)
         {
             _context = context;
         }
+        
+        public List<SelectListItem> GenreList { get; set; } = new();
 
         public IActionResult OnGet()
         {
+            foreach (Genre genreEnum in Enum.GetValues(typeof(Genre)))
+                GenreList.Add(new SelectListItem() { Text = genreEnum.ToString(), Value = ((int)genreEnum). ToString() });
+            
             return Page();
         }
 

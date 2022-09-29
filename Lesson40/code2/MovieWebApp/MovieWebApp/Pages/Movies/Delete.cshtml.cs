@@ -12,9 +12,9 @@ namespace MovieWebApp.Pages.Movies
 {
     public class DeleteModel : PageModel
     {
-        private readonly MovieWebApp.Data.MovieWebAppContext _context;
+        private readonly MovieWebAppContext _context;
 
-        public DeleteModel(MovieWebApp.Data.MovieWebAppContext context)
+        public DeleteModel(MovieWebAppContext context)
         {
             _context = context;
         }

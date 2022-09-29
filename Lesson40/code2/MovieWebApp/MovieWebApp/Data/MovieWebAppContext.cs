@@ -14,6 +14,6 @@ namespace MovieWebApp.Data
         {
         }
 
-        public DbSet<MovieWebApp.Models.Movie> Movie { get; set; }
+        public DbSet<Movie> Movie { get; set; }
     }
 }

@@ -12,9 +12,9 @@ namespace MovieWebApp.Pages.Movies
 {
     public class IndexModel : PageModel
     {
-        private readonly MovieWebApp.Data.MovieWebAppContext _context;
+        private readonly MovieWebAppContext _context;
 
-        public IndexModel(MovieWebApp.Data.MovieWebAppContext context)
+        public IndexModel(MovieWebAppContext context)
         {
             _context = context;
         }

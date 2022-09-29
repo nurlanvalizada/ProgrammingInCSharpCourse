@@ -12,9 +12,9 @@ namespace MovieWebApp.Pages.Movies
 {
     public class DetailsModel : PageModel
     {
-        private readonly MovieWebApp.Data.MovieWebAppContext _context;
+        private readonly MovieWebAppContext _context;
 
-        public DetailsModel(MovieWebApp.Data.MovieWebAppContext context)
+        public DetailsModel(MovieWebAppContext context)
         {
             _context = context;
         }

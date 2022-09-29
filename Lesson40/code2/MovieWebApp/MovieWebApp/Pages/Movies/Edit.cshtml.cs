@@ -13,12 +13,14 @@ namespace MovieWebApp.Pages.Movies
 {
     public class EditModel : PageModel
     {
-        private readonly MovieWebApp.Data.MovieWebAppContext _context;
+        private readonly MovieWebAppContext _context;
 
-        public EditModel(MovieWebApp.Data.MovieWebAppContext context)
+        public EditModel(MovieWebAppContext context)
         {
             _context = context;
         }
+        
+        public List<SelectListItem> GenreList { get; set; } = new();
 
         [BindProperty]
         public Movie Movie { get; set; }
@@ -36,6 +38,10 @@ namespace MovieWebApp.Pages.Movies
             {
                 return NotFound();
             }
+            
+            foreach (Genre genreEnum in Enum.GetValues(typeof(Genre)))
+                GenreList.Add(new SelectListItem() { Text = genreEnum.ToString(), Value = ((int)genreEnum). ToString() });
+            
             return Page();
         }
 
