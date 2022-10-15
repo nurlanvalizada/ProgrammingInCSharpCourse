@@ -1,3 +1,22 @@
-@page "{name}"
+@page "{name:alpha:length(3,7)}"
+@model MoviesPageModel
 
 <h3> My new Movies page</h3>
+
+<h2>My data: @ViewData["Name"]</h2>
+<email recipient="test@test.com">nurlan</email>
+<bold>Test1</bold>
+<span bold>Test2</span>
+
+
+<br/>
+<br/>
+<br/>
+
+<div condition="1==1">
+    <email recipient="test@test.com">nurlan</email>
+    <br/>
+    <bold>Test1</bold>
+    <br/>
+    <span bold>Test2</span>
+</div>

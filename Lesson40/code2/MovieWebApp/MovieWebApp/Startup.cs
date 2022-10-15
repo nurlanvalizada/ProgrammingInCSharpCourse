@@ -28,7 +28,7 @@ namespace MovieWebApp
             services.AddRazorPages();
 
             services.AddDbContext<MovieWebAppContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MovieWebAppContext")));
+                    options.UseSqlite(Configuration.GetConnectionString("MovieWebAppContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

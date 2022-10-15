@@ -4,8 +4,8 @@ namespace MovieWebApp.Pages;
 
 public class MoviesPageModel : PageModel
 {
-    public void OnGet()
+    public void OnGet(string name)
     {
-        
+        ViewData["Name"] = name;
     }
 }
