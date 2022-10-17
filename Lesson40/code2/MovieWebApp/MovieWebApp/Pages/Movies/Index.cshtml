@@ -17,21 +17,21 @@
                 <img class="card-img-top" src="https://fakeimg.pl/300x300/?text=@movie.Title" alt="@movie.Title">
                 <div class="card-body">
                     <h5 class="card-title">
-                        @movie.Title <span style="font-size: 14px;" class="float-right">@Html.DisplayFor(modelItem => movie.ReleaseDate.Year)</span>
+                        @movie.Title <span style="font-size: 14px;" class="float-right">@movie.ReleaseDate.Year</span>
                     </h5>
                     <p class="card-text" style="height: 200px; overflow-y: auto">
                         <span>
                             <span>
                                 <b>@Html.DisplayNameFor(x => movie.Genre):</b>
                             </span>
-                            <span>@Html.DisplayFor(x => movie.Genre)</span>
+                            <span>@movie.Genre</span>
                         </span>
                         <br/>
                         <span>
                             <span>
                                 <b>@Html.DisplayNameFor(x => movie.Price):</b>
                             </span>
-                            <span>@Html.DisplayFor(x => movie.Price)</span>
+                            <span>@movie.Price</span>
                         </span>
                         <br/>
                         <span>@movie.Description</span>
