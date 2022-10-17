@@ -5,33 +5,67 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
 <p>
     <a asp-page="Create">Create New</a>
-    <br/>
-    <a asp-page="/Movies" asp-route-name="Test">Go TO new page</a>
+    <a asp-page="/Movies" asp-route-name="Test" class="float-right">Go To new page</a>
 </p>
-<table class="table table-bordered">
+<div class="row">
+    @foreach (var movie in Model.Movie)
+    {
+        <div class="col-4">
+            <div class="card mb-2">
+                <img class="card-img-top" src="https://fakeimg.pl/300x300/?text=@movie.Title" alt="@movie.Title">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        @movie.Title <span style="font-size: 14px;" class="float-right">@Html.DisplayFor(modelItem => movie.ReleaseDate.Year)</span>
+                    </h5>
+                    <p class="card-text" style="height: 200px; overflow-y: auto">
+                        <span>
+                            <span>
+                                <b>@Html.DisplayNameFor(x => movie.Genre):</b>
+                            </span>
+                            <span>@Html.DisplayFor(x => movie.Genre)</span>
+                        </span>
+                        <br/>
+                        <span>
+                            <span>
+                                <b>@Html.DisplayNameFor(x => movie.Price):</b>
+                            </span>
+                            <span>@Html.DisplayFor(x => movie.Price)</span>
+                        </span>
+                        <br/>
+                        <span>@movie.Description</span>
+                    </p>
+                      <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@movie.ID" asp-route-name="@movie.Title">Edit</a> 
+                      <a class="btn btn-info" asp-page="./Details" asp-route-id="@movie.ID">Details</a> 
+                      <a class="btn btn-danger" asp-page="./Delete" asp-route-id="@movie.ID">Delete</a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>
+<table class="table table-bordered" condition="false">
     <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Title)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Genre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movie[0].Price)
-            </th>
-            <th></th>
-        </tr>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie[0].Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie[0].Genre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Movie[0].Price)
+        </th>
+        <th></th>
+    </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Movie) {
+    @foreach (var item in Model.Movie)
+    {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
@@ -48,10 +82,10 @@
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.ID" asp-route-name="@item.Title">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a href="Details/view/@item.ID">Details</a> |
+                <a href="Details/view/@item.ID">Details2</a> |
                 <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
             </td>
         </tr>
-}
+    }
     </tbody>
 </table>

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MovieWebApp.Data;
 
@@ -10,9 +11,10 @@ using MovieWebApp.Data;
 namespace MovieWebApp.Migrations
 {
     [DbContext(typeof(MovieWebAppContext))]
-    partial class MovieWebAppContextModelSnapshot : ModelSnapshot
+    [Migration("20221015173818_Second_Create")]
+    partial class Second_Create
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.10");

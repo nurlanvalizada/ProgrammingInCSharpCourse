@@ -16,6 +16,9 @@ namespace MovieWebApp.Models
         
         [Range(10, 10000, ErrorMessage = "Price is not correct")]
         public double Price { get; set; }
+        
+        [MaxLength(1000)]
+        public string Description { get; set; }
     }
 
     public enum Genre : byte
