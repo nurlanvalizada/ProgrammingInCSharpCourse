@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace MovieWebApp.Models
 {
@@ -19,6 +20,9 @@ namespace MovieWebApp.Models
         
         [MaxLength(1000)]
         public string Description { get; set; }
+        
+        [MaxLength(2000)]
+        public string ImageUrl { get; set; }
     }
 
     public enum Genre : byte

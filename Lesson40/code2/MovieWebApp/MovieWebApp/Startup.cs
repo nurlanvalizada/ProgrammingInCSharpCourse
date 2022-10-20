@@ -27,6 +27,8 @@ namespace MovieWebApp
         {
             services.AddRazorPages();
 
+            services.AddAutoMapper(typeof(Startup).Assembly);
+
             services.AddDbContext<MovieWebAppContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("MovieWebAppContext")));
         }

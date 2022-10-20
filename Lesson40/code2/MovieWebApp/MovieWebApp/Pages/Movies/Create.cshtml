@@ -7,9 +7,9 @@
 
 <h1>Create Movie</h1>
 <hr/>
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Movie.Title" class="control-label"></label>
@@ -41,15 +41,35 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary"/>
             </div>
-        </form>
+        </div>
+        <div class="col-md-5">
+            <div class="form-group">
+                <img width="300" height="300" id="imgPreview" src="https://fakeimg.pl/300x300/?text=Movie Image" alt="Movie Image"/>
+                <br/>
+                <br/>
+                <input type="file" id="inputFile" asp-for="Movie.Image"/>
+            </div>
+        </div>
     </div>
-</div>
+</form>
 
 <div>
     <a asp-page="Index">Back to List</a>
-    <a href="/Movies/List">Back to List</a>
 </div>
 
+
 @section Scripts {
+    <script>
+        $(document).ready(function () {
+            $("#inputFile").change(function () {
+                const file = this.files[0];
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#imgPreview").attr("src", e.target.result);
+                }
+                reader.readAsDataURL(file);
+            });
+        });
+    </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

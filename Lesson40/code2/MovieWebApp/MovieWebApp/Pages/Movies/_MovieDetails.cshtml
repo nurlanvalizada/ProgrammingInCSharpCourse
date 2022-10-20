@@ -36,3 +36,13 @@
         </dd>
     </dl>
 </div>
+<div class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Movie.Image)
+    </dt>
+    <dd class="col-sm-10">
+        <img width="300" height="300" id="imgPreview"
+             src='@(Model.Movie.ImageUrl == null ? $"https://fakeimg.pl/300x300/?text={Model.Movie.Title}" : "/uploads/images/" + Model.Movie.ImageUrl)'
+             alt="@Model.Movie.Title"/>
+    </dd>
+</div>

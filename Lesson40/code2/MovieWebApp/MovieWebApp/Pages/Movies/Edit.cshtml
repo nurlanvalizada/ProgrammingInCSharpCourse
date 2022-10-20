@@ -7,9 +7,9 @@
 
 <h1>Edit Movie</h1>
 <hr/>
-<div class="row">
-    <div class="col-md-4">
-        <form method="post">
+<form method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Movie.ID"/>
             <div class="form-group">
@@ -42,16 +42,41 @@
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary"/>
             </div>
-        </form>
+        </div>
+        <div class="col-md-5">
+            <div class="form-group">
+                <img width="300" height="300" id="imgPreview" 
+                      src='@(Model.Movie.ImageUrl == null 
+                                                   ? $"https://fakeimg.pl/300x300/?text={Model.Movie.Title}"
+                                                   : "/uploads/images/" + Model.Movie.ImageUrl)'
+                     alt="@Model.Movie.Title"/>
+                <br/>
+                <br/>
+                <input type="file" id="inputFile" asp-for="Movie.Image"/>
+                <br/>
+                <button condition="@(Model.Movie.ImageUrl != null)" class="btn btn-danger" asp-route-movieId="@Model.Movie.ID" 
+                        asp-page-handler="ImageDelete">Delete Image</button>
+            </div>
+        </div>
     </div>
-</div>
+</form>
 
 <div>
     <a asp-page="./Index">Back to List</a>
-    <br/>
-    <a href="/Movies/List">Back to List</a>
 </div>
 
 @section Scripts {
+        <script>
+            $(document).ready(function () {
+                $("#inputFile").change(function () {
+                    const file = this.files[0];
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        $("#imgPreview").attr("src", e.target.result);
+                    }
+                    reader.readAsDataURL(file);
+                });
+            });
+        </script>
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

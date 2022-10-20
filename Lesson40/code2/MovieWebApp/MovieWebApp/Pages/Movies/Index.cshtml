@@ -10,11 +10,15 @@
     <a asp-page="/Movies" asp-route-name="Test" class="float-right">Go To new page</a>
 </p>
 <div class="row">
-    @foreach (var movie in Model.Movie)
+    @foreach (var movie in Model.Movies)
     {
         <div class="col-4">
             <div class="card mb-2">
-                <img class="card-img-top" src="https://fakeimg.pl/300x300/?text=@movie.Title" alt="@movie.Title">
+                <img class="card-img-top" width="300" height="300" 
+                     src='@(movie.ImageUrl == null 
+                              ? $"https://fakeimg.pl/300x300/?text={movie.Title}"
+                              : "/uploads/images/" + movie.ImageUrl)'
+                     alt="@movie.Title">
                 <div class="card-body">
                     <h5 class="card-title">
                         @movie.Title <span style="font-size: 14px;" class="float-right">@movie.ReleaseDate.Year</span>
@@ -49,22 +53,22 @@
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Movie[0].Title)
+            @Html.DisplayNameFor(model => model.Movies[0].Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Movie[0].ReleaseDate)
+            @Html.DisplayNameFor(model => model.Movies[0].ReleaseDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Movie[0].Genre)
+            @Html.DisplayNameFor(model => model.Movies[0].Genre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Movie[0].Price)
+            @Html.DisplayNameFor(model => model.Movies[0].Price)
         </th>
         <th></th>
     </tr>
     </thead>
     <tbody>
-    @foreach (var item in Model.Movie)
+    @foreach (var item in Model.Movies)
     {
         <tr>
             <td>
