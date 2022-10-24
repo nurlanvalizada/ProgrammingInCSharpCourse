@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieWebApp.Data;
 
@@ -31,6 +32,11 @@ namespace MovieWebApp
 
             services.AddDbContext<MovieWebAppContext>(options =>
                     options.UseSqlite(Configuration.GetConnectionString("MovieWebAppContext")));
+
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+                //options.SignIn.RequireConfirmedAccount = true;
+            }).AddEntityFrameworkStores<MovieWebAppContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +58,7 @@ namespace MovieWebApp
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
