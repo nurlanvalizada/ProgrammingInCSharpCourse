@@ -1,0 +1,37 @@
+@page
+@model MovieWebApp.Areas.Admin.Pages.Roles.RoleIndexModel
+
+@{
+    ViewData["Title"] = "Roles";
+}
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var role in Model.Roles.Select((value, i) => new { i, value }))
+    {
+        <tr>
+            <th scope="row">@(role.i + 1)</th>
+            <td>@role.value.Id</td>
+            <td>@role.value.Name</td>
+            <td>
+                <form method="post">
+                    <a class="btn btn-info btn-sm" asp-page="./ManageClaims" asp-route-roleId="@role.value.Id">Manage Claims</a>
+                    <button class="btn btn-danger btn-sm" asp-page-handler="Delete" asp-route-id="@role.value.Id">Delete</button>
+                </form>
+            </td>
+           
+        </tr>
+    }
+    </tbody>
+</table>

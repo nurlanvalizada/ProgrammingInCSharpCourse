@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -13,6 +14,7 @@ using MovieWebApp.Models.Dtos;
 
 namespace MovieWebApp.Pages.Movies
 {
+    [Authorize(Policy = "WithPassport")]
     public class CreateModel : PageModel
     {
         private readonly MovieWebAppContext _context;
@@ -32,6 +34,8 @@ namespace MovieWebApp.Pages.Movies
 
         public IActionResult OnGet()
         {
+            var claims = User.Claims;
+            
             foreach (Genre genreEnum in Enum.GetValues(typeof(Genre)))
                 GenreList.Add(new SelectListItem() { Text = genreEnum.ToString(), Value = ((int)genreEnum). ToString() });
             

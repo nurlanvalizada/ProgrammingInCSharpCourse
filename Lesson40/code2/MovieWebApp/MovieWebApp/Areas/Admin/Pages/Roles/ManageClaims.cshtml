@@ -1,0 +1,74 @@
+@page
+@model MovieWebApp.Areas.Admin.Pages.Roles.ManageRoleClaims
+
+@{
+    ViewData["Title"] = "Roles Manage Claims";
+}
+
+<h1 class="text-danger" condition="@(ViewData["ErrorMessage"] != null)">@ViewData["ErrorMessage"]</h1>
+<div class="card" condition="@(ViewData["ErrorMessage"] == null && Model.RoleClaims != null)">
+    <div class="card-header">
+        <h2>Manage User Claims</h2>
+        Add/Remove Claims for Role / <b>@ViewData["RoleName"]</b>
+    </div>
+    <div class="card-body">
+        <div class="mb-3">
+            <h5>User Existing Claims</h5>
+
+
+            <table class="table table-bordered">
+                <thead>
+                <tr>
+                    <th scope="col">Claim Type</th>
+                    <th scope="col">Claim Value</th>
+                    <th scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var claim in Model.RoleClaims)
+                {
+                    <tr>
+                        <td>@claim.Type </td>
+                        <td>@claim.Value </td>
+                        <td>
+                            <form method="post">
+                                <input type="hidden" asp-for="@claim.Type"/>
+                                <input type="hidden" asp-for="@claim.Value"/>
+                                <button asp-route-roleId="@ViewData["roleId"]" asp-page-handler="Delete" class="btn btn-danger btn-sm">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <br/>
+        <br/>
+
+        <form method="post">
+
+            <div class="mb-3">
+                <h5>Add new claim</h5>
+                <div class="row">
+                    <div class="col-5">
+                        <label asp-for="@Model.RoleClaim.Type" class="form-label">Claim Type</label>
+                        <input asp-for="@Model.RoleClaim.Type" class="form-control"/>
+                    </div>
+                    <div class="col-2">
+                        <label asp-for="@Model.RoleClaim.Type" class="form-label">Claim Value</label>
+                        <input asp-for="@Model.RoleClaim.Value" class="form-control"/>
+                    </div>
+                    <div class="col-2">
+                        <label class="form-label" style="color: transparent">Add</label>
+                        <input type="submit" value="Add" class="btn btn-primary form-control"/>
+                    </div>
+                </div>
+                <div asp-validation-summary="All" class="text-danger"></div>
+            </div>
+        </form>
+
+    </div>
+    <div class="card-footer">
+        <a asp-page="./Index" class="btn btn-danger" style="width:auto">Cancel</a>
+    </div>
+</div>

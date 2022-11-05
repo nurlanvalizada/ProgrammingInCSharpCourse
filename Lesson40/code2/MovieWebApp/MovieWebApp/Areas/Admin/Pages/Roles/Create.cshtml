@@ -1,0 +1,26 @@
+@page
+@model MovieWebApp.Areas.Admin.Pages.Roles.CreateRoleModel
+@{
+    ViewData["Title"] = "Roles Create";
+}
+
+<h1>Create Role</h1>
+<hr/>
+<form method="post">
+    <div class="row">
+        <div class="col-md-7">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                <input asp-for="RoleCreate.Name" class="form-control" aria-required="true"/>
+                <label asp-for="RoleCreate.Name"></label>
+                <span asp-validation-for="RoleCreate.Name" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

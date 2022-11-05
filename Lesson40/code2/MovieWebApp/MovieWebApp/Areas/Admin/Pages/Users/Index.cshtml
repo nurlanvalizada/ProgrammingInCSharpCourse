@@ -1,0 +1,40 @@
+@page
+@model MovieWebApp.Areas.Admin.Pages.Users.IndexModel
+
+@{
+    ViewData["Title"] = "Users";
+}
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Id</th>
+        <th scope="col">UserName</th>
+        <th scope="col">Email</th>
+        <th scope="col">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var user in Model.Users.Select((value, i) => new { i, value }))
+    {
+        <tr>
+            <th scope="row">@(user.i + 1)</th>
+            <td>@user.value.Id</td>
+            <td>@user.value.UserName</td>
+            <td>@user.value.Email</td>
+        <td>
+            <form method="post">
+                <a class="btn btn-primary btn-sm" asp-page="./ManageRoles" asp-route-userId="@user.value.Id">Manage Roles</a>
+                <a class="btn btn-info btn-sm" asp-page="./ManageClaims" asp-route-userId="@user.value.Id">Manage Claims</a>
+                <button asp-page-handler="Delete" class="btn btn-danger btn-sm" asp-route-id="@user.value.Id">Delete</button>
+            </form>
+        </td>
+            
+        </tr>
+    }
+    </tbody>
+</table>

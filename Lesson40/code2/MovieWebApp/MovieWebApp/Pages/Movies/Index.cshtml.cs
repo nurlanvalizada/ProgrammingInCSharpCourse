@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MovieWebApp.Data;
@@ -8,6 +9,7 @@ using MovieWebApp.Models.Dtos;
 
 namespace MovieWebApp.Pages.Movies
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly MovieWebAppContext _context;

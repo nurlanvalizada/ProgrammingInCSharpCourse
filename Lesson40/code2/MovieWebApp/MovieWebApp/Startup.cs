@@ -1,13 +1,8 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MovieWebApp.Data;
@@ -26,7 +21,11 @@ namespace MovieWebApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddRazorPages(options =>
+            {
+                options.Conventions.AuthorizeFolder("/Movies");
+                options.Conventions.AllowAnonymousToPage("/Movies/Edit");
+            });
 
             services.AddAutoMapper(typeof(Startup).Assembly);
 
@@ -36,7 +35,14 @@ namespace MovieWebApp
             services.AddDefaultIdentity<IdentityUser>(options =>
             {
                 //options.SignIn.RequireConfirmedAccount = true;
-            }).AddEntityFrameworkStores<MovieWebAppContext>();
+            })
+            .AddRoles<IdentityRole>()
+            .AddEntityFrameworkStores<MovieWebAppContext>();
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("WithPassport", policy => policy.RequireClaim("pasport number"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
